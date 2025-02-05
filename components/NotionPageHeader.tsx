@@ -40,15 +40,19 @@ export function NotionPageHeader({
   const { components, mapPageUrl } = useNotionContext()
 
   if (navigationStyle === 'default') {
+
     return <Header block={block} />
+  
   }
 
   return (
+
     <header className='notion-header'>
       <div className='notion-nav-header'>
         <Breadcrumbs block={block} rootOnly={true} />
 
         <div className='notion-nav-header-rhs breadcrumbs'>
+
           {navigationLinks
             ?.map((link, index) => {
               if (!link.pageId && !link.url) {
@@ -84,6 +88,8 @@ export function NotionPageHeader({
           {isSearchEnabled && <Search block={block} title={null} />}
         </div>
       </div>
+
+
     </header>
   )
 }

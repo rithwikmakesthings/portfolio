@@ -38,10 +38,20 @@ export class HeroHeader extends Component<{
 
   render() {
     return (
+
+      <div
+        style={{
+          //position: 'fixed',
+          width: '90vw',
+          filter: 'blur(1px)',
+          margin: '0 auto'
+        }} >
       <FluidAnimation
         className={this.props.className}
         animationRef={this._animationRef}
       />
+
+    </div>
     )
   }
 
@@ -70,8 +80,7 @@ export class HeroHeader extends Component<{
       const w = this._animation.width
       const h = this._animation.height
 
-      // adjust the intensity scale depending on the canvas width, so it's less
-      // intense on smaller screens
+      // adjust the intensity scale depending on the canvas width
       const s = Math.max(0.1, Math.min(1, w / 1200))
       scale = Math.pow(s, 1.2)
 
@@ -80,9 +89,16 @@ export class HeroHeader extends Component<{
         maxSplatRadius * scale
       )
 
+
+
       const splats = []
       for (let i = 0; i < numSplatsPerEpoch; ++i) {
-        const color = [random.float(10), random.float(10), random.float(10)]
+        // Generate lighter (pastel) colors by restricting each channel to 5–10
+        const color = [
+          random.float(0, 1),
+          random.float(9, 10),
+          random.float(5, 10),
+        ]
 
         const w0 = w / 3.0
         const w1 = (w * 2.0) / 3.0
@@ -106,27 +122,14 @@ export class HeroHeader extends Component<{
           splats.push(splat)
           break
         }
-
-        // old version which generated samples along a circle
-        // const t = random.float(2 * Math.PI)
-        // const cos = Math.cos(t)
-        // const sin = Math.sin(t)
-        // const x = w / 2 + r * cos
-        // const y = h / 2 + r * sin + yOffset
-        // const k = random.float() > 0.98 ? random.float(3, 10) : 1
-        // const dx = k * random.float(-1, 1) * random.float(50, 300) * cos
-        // const dy = k * random.float(-1, 1) * random.float(50, 300) * sin
-        // const splat = { x, y, dx, dy, color }
-        // splats.push(splat)
       }
 
       this._animation.addSplats(splats)
     }
 
-    // using an exponential distribution here allows us to favor bursts of activity
-    // but also allow for more occasional pauses
+    // exponential distribution for time intervals
     const dampenedScale = Math.pow(scale, 0.2)
-    const timeout = (exp() * 100) / dampenedScale
+    const timeout = (exp() * 250) / dampenedScale
 
     this._timeout = setTimeout(() => {
       this._tickRaf = raf(this._tick)

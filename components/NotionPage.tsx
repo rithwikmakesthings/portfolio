@@ -152,6 +152,11 @@ const propertyTextValue = (
   return defaultFn()
 }
 
+const HeroHeader = dynamic<{ className?: string }>(
+  () => import('./HeroHeader').then((m) => m.HeroHeader),
+  { ssr: false }
+)
+
 export function NotionPage({
   site,
   recordMap,
@@ -199,7 +204,7 @@ export function NotionPage({
   //   parsePageId(block?.id) === parsePageId(site?.rootNotionPageId)
   const isBlogPost =
     block?.type === 'page' && block?.parent_table === 'collection'
-
+    const isBioPage = true
   const showTableOfContents = !!isBlogPost
   const minTableOfContentsItems = 3
 
@@ -211,6 +216,18 @@ export function NotionPage({
   )
 
   const footer = React.useMemo(() => <Footer />, [])
+
+
+  const pageCover = React.useMemo(() => {
+    if (isBioPage) {
+      return (
+        <HeroHeader className='notion-page-cover-wrapper notion-page-cover-hero' />
+      )
+    } else {
+      return null
+    }
+  }, [isBioPage])
+
 
   if (router.isFallback) {
     return <Loading />
@@ -289,6 +306,8 @@ export function NotionPage({
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
         footer={footer}
+        pageTitle={title}
+        pageCover={pageCover}
       />
 
       <GitHubShareButton />

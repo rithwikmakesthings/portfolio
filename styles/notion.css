@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: "04b_03";
-  src: url("/04B_03__.TTF") format("truetype");
+  src: url("https://github.com/rithwikmakesthings/portfolio/blob/main/styles/04B_03__.woff") format("woff");
 }
 
 .index-page {

@@ -23,8 +23,8 @@
 }
 
 @font-face {
-  font-family: "04b_03";
-  src: url("https://github.com/rithwikmakesthings/portfolio/blob/main/styles/04B_03__.woff") format("woff");
+  font-family: "font04b_03";
+  src: url("https://github.com/rithwikmakesthings/portfolio/blob/main/styles/font04B_03__.woff") format("woff");
 }
 
 .index-page {
@@ -175,7 +175,7 @@
 .notion-title {
   display: block;
 
-  font-family: "04b_03";
+  font-family: "font04b_03";
   text-align: center;
 }
 

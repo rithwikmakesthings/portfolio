@@ -7,6 +7,7 @@
  * places to add some flare.
  */
 
+
 .notion {
   --notion-max-width: 720px;
   --notion-header-height: 54px;
@@ -19,6 +20,11 @@
 .notion-page {
   padding-bottom: calc(max(5vh, 32px)) !important;
   line-height: 1.65;
+}
+
+@font-face {
+  font-family:"Norns";
+  src: url("https://github.com/rithwikmakesthings/portfolio/blob/main/lib/fonts/norns.ttf") format("truetype");
 }
 
 .index-page {
@@ -169,6 +175,7 @@
 .notion-title {
   display: block;
   text-align: center;
+  font-family: "norns", sans-serif;
 }
 
 .notion-collection-row {
@@ -355,6 +362,10 @@
 .notion-page-icon-hero.notion-page-icon-image span,
 .notion-page-icon-hero.notion-page-icon-image img {
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .notion-header {

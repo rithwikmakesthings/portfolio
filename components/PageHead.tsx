@@ -42,6 +42,7 @@ export function PageHead({
         content='#fefffe'
         key='theme-color-light'
       />
+
       <meta
         name='theme-color'
         media='(prefers-color-scheme: dark)'

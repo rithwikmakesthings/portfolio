@@ -288,7 +288,7 @@ export function NotionPage({
           styles.notion,
           pageId === site.rootNotionPageId && 'index-page'
         )}
-        darkMode={false}
+        darkMode={isDarkMode}
         components={components}
         recordMap={recordMap}
         rootPageId={site.rootNotionPageId}
@@ -306,7 +306,6 @@ export function NotionPage({
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
         footer={footer}
-
         pageCover={pageCover}
       />
 

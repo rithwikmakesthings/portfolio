@@ -42,7 +42,7 @@ export function NotionPageHeader({
   if (navigationStyle === 'default') {
 
     return <Header block={block} />
-  
+
   }
 
   return (
@@ -61,6 +61,7 @@ export function NotionPageHeader({
 
               if (link.pageId) {
                 return (
+
                   <components.PageLink
                     href={mapPageUrl(link.pageId)}
                     key={index}
@@ -68,6 +69,7 @@ export function NotionPageHeader({
                   >
                     {link.title}
                   </components.PageLink>
+
                 )
               } else {
                 return (

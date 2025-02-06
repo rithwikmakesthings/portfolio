@@ -23,8 +23,8 @@
 }
 
 @font-face {
-  font-family:"Norns";
-  src: url("https://github.com/rithwikmakesthings/portfolio/blob/main/lib/fonts/norns.ttf") format("truetype");
+  font-family: "04b_03";
+  src: url("/04B_03__.TTF") format("truetype");
 }
 
 .index-page {
@@ -174,8 +174,9 @@
 
 .notion-title {
   display: block;
+
+  font-family: "04b_03";
   text-align: center;
-  font-family: "norns", sans-serif;
 }
 
 .notion-collection-row {

@@ -42,7 +42,7 @@ export class HeroHeader extends Component<{
       <div
         style={{
           //position: 'fixed',
-          width: '90vw',
+          width: '75vw',
           filter: 'blur(1px)',
           margin: '0 auto'
         }} >

@@ -1,3 +1,5 @@
+
+import AnimatedLogo from "./AnimatedLogo";
 import { LoadingIcon } from './LoadingIcon'
 import styles from './styles.module.css'
 
@@ -7,4 +9,15 @@ export function Loading() {
       <LoadingIcon />
     </div>
   )
+}
+
+
+
+
+export default function App() {
+  return (
+    <div className="styles.container">
+      <AnimatedLogo />
+    </div>
+  );
 }

@@ -7,6 +7,7 @@ import { type PageBlock } from 'notion-types'
 import { formatDate, getBlockTitle, getPageProperty } from 'notion-utils'
 import * as React from 'react'
 import BodyClassName from 'react-body-classname'
+import { render } from "react-dom";
 import {
   type NotionComponents,
   NotionRenderer,
@@ -23,14 +24,13 @@ import { searchNotion } from '@/lib/search-notion'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
 import { Footer } from './Footer'
+import { App, Loading } from "./Loading";
 //import { GitHubShareButton } from './GitHubShareButton'
-import { Loading } from './Loading'
 import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
 import styles from './styles.module.css'
-
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
 // -----------------------------------------------------------------------------
@@ -222,6 +222,7 @@ export function NotionPage({
     if (isBioPage) {
       return (
         <HeroHeader className='notion-page-cover-wrapper notion-page-cover-hero' />
+
       )
     } else {
       return null
@@ -264,6 +265,7 @@ export function NotionPage({
       config.defaultPageCover,
     block
   )
+
 
   const socialDescription =
     getPageProperty<string>('Description', block, recordMap) ||

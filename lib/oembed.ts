@@ -7,7 +7,7 @@ export const oembed = async ({
   url,
   maxWidth,
   maxHeight,
-  dark = false
+  dark = true
 }: {
   url: string
   maxWidth?: number

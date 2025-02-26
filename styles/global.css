@@ -19,6 +19,11 @@ body {
     'Droid Sans', 'Helvetica Neue', 'Noto Sans', sans-serif ;
   font-family: var(--notion-font);
   overflow-x: hidden;
+  background-color: transparent !important;
+}
+
+.-ReactGridGallery {
+background-color: blue;
 }
 
 .static-tweet blockquote {

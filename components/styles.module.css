@@ -231,3 +231,11 @@
 .hidden {
   visibility: hidden;
 }
+
+.photoGridContainer {
+  margin-top: 20px;
+  display: flex;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+}
